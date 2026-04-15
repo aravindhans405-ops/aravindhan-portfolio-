@@ -1,5 +1,5 @@
 import "./Contact.css";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 function Contact() {
 
@@ -24,17 +24,17 @@ function Contact() {
           </p>
 
           <div className="info-item">
-            <FaEnvelope className="contact-icon"/>
+            <Mail className="contact-icon"/>
             <span>aminehamzaoui1925@gmail.com</span>
           </div>
 
           <div className="info-item">
-            <FaPhone className="contact-icon"/>
+            <Phone className="contact-icon"/>
             <span>+213 XX XX XX XX</span>
           </div>
 
           <div className="info-item">
-            <FaMapMarkerAlt className="contact-icon"/>
+            <MapPin className="contact-icon"/>
             <span>Algeria</span>
           </div>
 

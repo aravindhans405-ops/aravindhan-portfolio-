@@ -1,5 +1,5 @@
 import "./Footer.css"
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { Github, Linkedin, Instagram } from "lucide-react";
 
 function Footer(){
 
@@ -13,9 +13,9 @@ function Footer(){
 
         <div className="social-icons">
 
-          <a href="#"><FaGithub/></a>
-          <a href="#"><FaLinkedin/></a>
-          <a href="#"><FaInstagram/></a>
+          <a href="#"><Github size={24} /></a>
+          <a href="#"><Linkedin size={24} /></a>
+          <a href="#"><Instagram size={24} /></a>
 
         </div>
 

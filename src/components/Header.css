@@ -56,9 +56,12 @@ body{
     letter-spacing:2px;
     font-size:24px;
     font-weight:600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.logo h1 span{
+.logo-icon {
     color:#777777;
 }
 
@@ -106,4 +109,67 @@ ul{
     color:#777777;
     transform:scale(1.15);
     text-shadow:0 0 8px rgba(119,119,119,0.8);
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    .header {
+        width: 90%;
+        padding: 10px 20px;
+        top: 10px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .links {
+        gap: 15px;
+    }
+
+    .links li a {
+        font-size: 13px;
+    }
+
+    .icons {
+        gap: 12px;
+    }
+
+    .icons li {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        width: 95%;
+        padding: 8px 15px;
+    }
+
+    .logo h1 {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .links {
+        gap: 10px;
+        display: none;
+    }
+
+    .links.active {
+        display: flex;
+    }
+
+    .links li a {
+        font-size: 12px;
+    }
+
+    .icons {
+        gap: 10px;
+    }
+
+    .icons li {
+        font-size: 16px;
+    }
 }

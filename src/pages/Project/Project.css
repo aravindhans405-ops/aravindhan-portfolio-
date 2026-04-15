@@ -118,3 +118,108 @@
     background:#333;
     color:#fff;
 }
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 1024px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        margin: 50px auto;
+        padding: 30px 20px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+        font-size: 32px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-card img {
+        height: 200px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+        margin: 12px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+        margin: 0 12px 12px;
+    }
+
+    .skills a {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project {
+        margin: 30px auto;
+        padding: 20px 15px;
+    }
+
+    .title {
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+
+    .title::after {
+        width: 80px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card img {
+        height: 150px;
+    }
+
+    .project-card h3 {
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    .project-card p {
+        font-size: 12px;
+        margin: 0 10px 10px;
+    }
+
+    .skills {
+        margin-bottom: 10px;
+        gap: 6px;
+    }
+
+    .skills a {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    .btns {
+        gap: 10px;
+        padding-bottom: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+}

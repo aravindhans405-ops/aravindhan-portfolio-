@@ -1,4 +1,6 @@
 import "./Project.css";
+import { motion } from "framer-motion";
+import { Github, ExternalLink } from "lucide-react";
 
 import img1 from "../../assets/images/Cleveroad.jpg";
 import img2 from "../../assets/images/Capture d'écran 2025-10-22 182207.png";
@@ -51,21 +53,46 @@ const projects = [
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
 export default function Project() {
 
   return (
 
-    <section className="project reveal" id="project">
+    <motion.section 
+      className="project reveal" 
+      id="project"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={containerVariants}
+    >
 
-      <div className="title">
+      <motion.div className="title" variants={cardVariants}>
         <h2>Project</h2>
-      </div>
+      </motion.div>
 
-      <div className="projects-container">
+      <motion.div className="projects-container" variants={containerVariants}>
 
         {projects.map((project, index) => (
 
-          <div className="project-card" key={index}>
+          <motion.div 
+            className="project-card" 
+            key={index}
+            variants={cardVariants}
+            whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
+          >
 
             <img src={project.img} alt={project.title} />
 
@@ -82,22 +109,22 @@ export default function Project() {
             <div className="btns">
 
               <a href="#" className="btn">
-                <i className="fab fa-github"></i> GitHub
+                <Github size={18} /> GitHub
               </a>
 
               <a href="#" className="btn">
-                <i className="fas fa-external-link-alt"></i> Live Demo
+                <ExternalLink size={18} /> Live Demo
               </a>
 
             </div>
 
-          </div>
+          </motion.div>
 
         ))}
 
-      </div>
+      </motion.div>
 
-    </section>
+    </motion.section>
 
   );
 

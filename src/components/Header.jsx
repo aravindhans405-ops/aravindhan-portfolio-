@@ -1,7 +1,6 @@
 import "./Header.css"
 import { useState, useEffect } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { Github, Instagram, Linkedin, Zap } from "lucide-react"
 
 function Header() {
 
@@ -24,7 +23,7 @@ function Header() {
     return (
         <header className={scrolled ? "header scroll" : "header"}>
             <div className="logo">
-                <h1><span>⚡️</span>Aravind</h1>
+                <h1><Zap size={24} className="logo-icon" />Aravind</h1>
             </div>
 
             <ul className="links">
@@ -36,9 +35,9 @@ function Header() {
             </ul>
 
             <ul className="icons">
-                <li><a href="https://github.com/aravindhans405-ops" target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
-                <li><a href="https://instagram.com/orewa_aravindhan" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a></li>
-                <li><a href="https://linkedin.com/in/aravindhan-sm" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+                <li><a href="https://github.com/aravindhans405-ops" target="_blank"><Github size={22} /></a></li>
+                <li><a href="https://instagram.com/orewa_aravindhan" target="_blank"><Instagram size={22} /></a></li>
+                <li><a href="https://linkedin.com/in/aravindhan-sm" target="_blank"><Linkedin size={22} /></a></li>
             </ul>
         </header>
     )

@@ -1,61 +1,54 @@
 import "./Skills.css";
-
-import {
-FaHtml5,
-FaCss3Alt,
-FaJs,
-FaReact,
-FaGitAlt,
-FaGithub,
-FaFigma,
-FaNodeJs,
-FaJava
-} from "react-icons/fa";
-
-import {
-SiUnity,
-SiTailwindcss,
-SiFirebase,
-SiMongodb,
-SiExpress,
-SiMysql,
-SiPhp
-} from "react-icons/si";
+import { motion } from "framer-motion";
 
 function Skills(){
 
 return(
 
-<div className="skills">
+<motion.div 
+  className="skills"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6 }}
+>
 <div className="skills-slider">
-<div className="skills-track">
+<motion.div 
+  className="skills-track"
+  animate={{ x: [0, -1000] }}
+  transition={{ 
+    duration: 20, 
+    repeat: Infinity, 
+    ease: "linear" 
+  }}
+>
 
-<FaHtml5/>
-<FaCss3Alt/>
-<FaJs/>
-<FaReact/>
+<span className="skill-icon">HTML5</span>
+<span className="skill-icon">CSS3</span>
+<span className="skill-icon">JavaScript</span>
+<span className="skill-icon">React</span>
 
-<FaJava/>
-<SiMysql/>
-<SiPhp/>
+<span className="skill-icon">Java</span>
+<span className="skill-icon">MySQL</span>
+<span className="skill-icon">PHP</span>
 
-<FaNodeJs/>
-<SiExpress/>
-<SiMongodb/>
+<span className="skill-icon">Node.js</span>
+<span className="skill-icon">Express</span>
+<span className="skill-icon">MongoDB</span>
 
-<FaGitAlt/>
-<FaGithub/>
-<FaFigma/>
+<span className="skill-icon">Git</span>
+<span className="skill-icon">GitHub</span>
+<span className="skill-icon">Figma</span>
 
-<SiUnity/>
-<SiTailwindcss/>
-<SiFirebase/>
+<span className="skill-icon">Unity</span>
+<span className="skill-icon">Tailwind</span>
+<span className="skill-icon">Firebase</span>
+
+</motion.div>
 
 </div>
 
-</div>
-
-</div>
+</motion.div>
 
 )
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "./About.css";
 import Skills from "./Skills";
 
@@ -6,29 +7,47 @@ function About() {
 
   const [flip, setFlip] = useState(false);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
-    <div className="about" id="about">
+    <motion.div 
+      className="about" 
+      id="about"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
 
-      <div className="title">
+      <motion.div className="title" variants={itemVariants}>
         <h2>About Me</h2>
-      </div>
+      </motion.div>
 
-      <div className="content">
+      <motion.div className="content" variants={containerVariants}>
 
-        <div
+        <motion.div
           className="photo-card"
           onClick={() => setFlip(!flip)}
+          variants={itemVariants}
+          whileHover={{ scale: 1.05 }}
         >
 
           <div className={flip ? "photo-inner flip" : "photo-inner"}>
 
-            {/* FRONT IMAGE */}
-
             <div className="photo-front">
               <img src="img3.png" alt="" />
             </div>
-
-            {/* BACK IMAGE */}
 
             <div className="photo-back">
               <img src="img4.png" alt="" />
@@ -36,9 +55,9 @@ function About() {
 
           </div>
 
-        </div>
+        </motion.div>
 
-        <div className="text-about">
+        <motion.div className="text-about" variants={itemVariants}>
           <p>
             Hi, I'm Aravindhan, a passionate Frontend Developer and Computer Science student.
             I enjoy building modern, responsive, and interactive web interfaces that provide
@@ -47,13 +66,13 @@ function About() {
             improving my skills to create better digital products. My goal is to combine
             creativity with technology to build websites that are both beautiful and functional.
           </p>
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
       <Skills />
 
-    </div>
+    </motion.div>
   );
 }
 
